@@ -17,7 +17,7 @@ pub fn main() {
   let pid3 = process.spawn(fn() { process.sleep(500) })
 
   // Wait for them to exit
-  process_waiter.wait([pid1, pid2, pid3])
+  process_waiter.await_forever([pid1, pid2, pid3])
 
   // The processes have now finished
   process.is_alive(pid1) // -> False
